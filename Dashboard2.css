@@ -1,0 +1,17 @@
+.centered{
+    background-color: white;
+    box-shadow: 2px 4px 8px;
+    padding: 40px;
+}
+#updateBtn{
+display: none;
+}
+.dropdown-menu{
+    display: none;
+}
+.titleNewUser{
+
+}
+.centeredEdit{
+    display: none;
+}

@@ -1,0 +1,213 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <link rel="stylesheet"  type="text/css" href="newDashboard.min.css" >
+    <link rel="stylesheet" href="./fontawesome-free-5.14.0-web/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.5.2-dist/css/bootstrap.css">
+    <title>newDashboard</title>
+
+<meta name="theme-color" content="#7952b3">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <link href="newDashboard.min.css" rel="stylesheet">
+    <link href="Dashboard2.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- DASHBOARD left -->
+<header class="navbar navbar-dark sticky-top btn btn-primary flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 mt-3 me-0 px-3" href="#">Employee Management</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <input class="form-control form-control-dark w-50" type="text" placeholder="Search" aria-label="Search">
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">  
+    </button>
+    <ul class="dropdown-menu navbar-nav px3">
+      <li class="nav-item text-nowrap nav-link"><a class="dropdown-item " href="index.html">Sign Out</a></li>
+      <li class="nav-item text-nowrap nav-link"><a class="dropdown-item editadmin" onclick="editAdmin(k)">Edit</a></li>
+    </ul>
+  </div>
+</header>
+<!-- DASHBOARD RIGHR -->
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="newDashboard.html">
+              <span data-feather="home"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link addNew" href="Register.html">
+              <span data-feather="file"></span>
+              Add User
+            </a>
+          </li> 
+        </ul>
+      </div>
+    </nav>
+
+       <!-- Add user form -->
+    <div class="centered text-center" style="display: none;" >
+      <div class="input-group mb-3">
+        <input type="text" placeholder="Upload File" class=" form-control" id="pics" required><P></P>
+      </div>
+      
+        <div class="input-group mb-3">
+            <input type="text" class="form-control fname" id="ff" placeholder="First Name" aria-label="First Name" required>
+          </div>
+
+          <div class="input-group mb-3">
+          <input type="text" class="form-control lname" id="lname"  placeholder="Last Name" aria-label="Last Name" required >
+        </div>
+
+<div class="input-group mb-3">
+        <input type="text" class="form-control midname" id="midname" placeholder="Middle Name" aria-label="Middle Name" required >
+      </div>
+<div class="input-group mb-3">
+      <input type="text" class="form-control dept" id="dept" placeholder="Department" aria-label="Department" required >
+    </div>
+  
+  
+  <div class="input-group mb-3">
+  <input type="date" class="form-control doe" id="doe" placeholder="Date of Employment" aria-label="DateofEmployement" required >
+</div>
+
+<div class="input-group mb-3">
+<input type="number" class="form-control numb" id="numb" placeholder="Phone Number" aria-label="pHONEnUMBER" required >
+</div>
+<div class="input-group mb-3">
+  <input type="date" class="form-control dob" id="dob" placeholder="Date of Birth" aria-label="DateofBirth" required >
+</div>
+
+<div class="d-grid gap-2 mt-5">
+            
+  <button class="btn btn-primary saveBtn" type="button" onclick="newStaffs(document.querySelector('#ff').value,document.querySelector('#lname').value, document.querySelector('#midname').value, document.querySelector('#dept').value,document.querySelector('#dob').value,document.querySelector('#numb').value,document.querySelector('#doe').value,document.querySelector('#pics').value)">Submit</button>
+  <button class="btn btn-primary updateBtn" type="button" onclick="updateStaff()" style="display: none;">Update</button>
+
+</div>  
+          </div>
+
+    <!-- ADMIN ACCONT CREATION -->
+    <div class=" text-center createAccountPage" style="display: none;">
+      <h3 class="adminHeading">CREATE AN ACCOUNT</h3>
+      <form>
+        <input type="text" id="hiden" hidden>
+          <input type="text" placeholder="Full Name" class="fullname" required><P></P>
+          <input type="email" placeholder="Email" class="email" required><P></P>
+          <input type="text" placeholder="User Name" class="username" required><P></P>
+          <input type="password" placeholder="Password" class="password1" required><p></p>
+          <input type="password" placeholder="Password (Confirm)" class="password2" required><p></p>
+          <a  type="button" class="btn btn-success createAccountBtn" onclick="createAccountBtns(document.querySelector('.fullname').value,document.querySelector('.email').value,document.querySelector('.username').value,document.querySelector('.password1').value,document.querySelector('.password2').value)">CREATE AN ACCOUNT</a><p></p>
+          <a  type="button" class="btn btn-success updateAccountBtn" onclick="updateAdmin()">UPDATE ACCOUNT</a><p></p>
+
+      </form>
+            </div>
+  
+<!-- //edit form -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <h2 class="mt-3 mb-4 titleNewUser" style="display: none;">New Users</h2>
+      <div class="centeredEdit text-center">
+
+        <div class="input-group mb-3">
+          <button  class="form-control closeEdit">CLOSE</button>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="pics"  placeholder="Upload File" aria-label="First Name" required>
+        </div>
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="ff" placeholder="First Name" aria-label="First Name" required>
+          </div>
+
+          <div class="input-group mb-3">
+          <input type="text" class="form-control" id="lname" placeholder="Last Name" aria-label="First Name" required >
+        </div>
+
+<div class="input-group mb-3">
+        <input type="text" class="form-control " id="midname"  placeholder="Middle Name" aria-label="First Name" required >
+      </div>
+<div class="input-group mb-3">
+      <input type="text" class="form-control" id="dept" placeholder="Department"  aria-label="First Name" required >
+    </div>
+  
+  
+  <div class="input-group mb-3">
+  <input type="date" class="form-control" id="doe" placeholder="Date of employment"  aria-label="First Name" required >
+</div>
+
+<div class="input-group mb-3">
+<input type="number" class="form-control" id="numb" placeholder="Phone Number"  aria-label="First Name" required >
+</div>
+<div class="input-group mb-3" id="hiden">
+  <input type="date" class="form-control " id="dob" placeholder="Date of Employment" aria-label="First Name" required >
+</div>
+
+<div class="d-grid gap-2 mt-5">
+            
+  <button  hidden class="btn btn-primary saveBtn" type="button" onclick="newStaffs(document.querySelector('.fname').value,document.querySelector('.lname').value, document.querySelector('.midname').value, document.querySelector('.dept').value,document.querySelector('.dob').value,document.querySelector('.numb').value,document.querySelector('.doe').value, document.querySelector('#pics').value
+  )">Submit</button>
+  <button class="btn btn-primary updateBtn" type="button" onclick="updateStaff()" style="display: none;">Update</button>
+
+</div>
+
+            
+          </div>
+
+      <h2 class="tableTitle">Employee Details</h2> 
+        <table class="table table-hover text-center contTable">
+        <thead>
+          <tr>
+            
+            <th scope="col">S/N</th>
+            <th scope="col">Image</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">MiddleName</th>
+            <th scope="col">Department</th>
+            <th scope="col">DateofBirth</th>
+            <th scope="col">DateofEmployement</th>
+            <th scope="col">Number</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="tb">
+
+        </tbody>
+      </table>
+      
+    </main>
+  </div>
+</div>
+
+
+<script src="newDashboard.js"></script>
+  </body>
+</html>

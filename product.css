@@ -1,0 +1,116 @@
+
+.contents{
+    margin-left: 250px;
+     /* Same as the width of the sidenav */
+  font-size: 16px; /* Increased text to enable scrolling */
+  
+}
+.contenth{
+       margin-left: 30px; /*Same as the width of the sidenav  */
+  font-size: 16px; /* Increased text to enable scrolling */
+ 
+}
+
+.overView{
+    color: blue;
+    /* float: left;
+    margin: 25px; */
+}
+.analytic{
+    /* float: left; */
+    color: blue;
+    /* margin: 5px; */
+}
+.Month{
+    /* float: right; */
+    color: blue;
+}
+.notify{
+    border-radius: 10px;
+    height: 100px;
+}
+
+.overViews{
+    color: blue;
+    
+}
+
+    .side {
+        height: 100%;
+        width: 160px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+      }
+
+      .sides{
+        height: 100%;
+        width: 160px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 90%;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 15px;
+      }
+      
+      .side a {
+        padding: 2px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+      
+      .side a:hover {
+        color: #f1f1f1;
+      }
+
+      @media screen and (max-height: 450px) {
+        .side {padding-top: 15px;}
+        .side a {font-size: 18px;}
+      }
+      #error{
+          height: 40px;
+          width: 250px;
+          position: fixed;
+          /* z-index: 1; */
+          top: 10;
+          transition: 0.5s;
+          padding-top: 15px;
+          margin-left:900px; 
+          display:none; 
+          color: white;
+      
+      }
+
+      #success{
+        height: 40px;
+        width: 250px;
+        position: fixed;
+        /* z-index: 1; */
+        top: 10;
+        transition: 0.5s;
+        padding-top: 15px;
+        margin-left:900px; 
+        display:none; 
+        color: white;
+    
+    }
+
+    /* .tableTitle{
+      margin-left: 80px;
+    }
+
+    .conttable{
+      margin-left: 80px;
+    } */
+      
+
+

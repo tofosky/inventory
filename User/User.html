@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.5.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="User.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.14.0-web/css/all.min.css">
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    <title>Dashboard</title>
+</head>
+<body>
+         <div class="row text-center">
+          <span style="font-size:30px;cursor:pointer; margin-left: 50px;" onclick="openNav()">&#9776;</span>
+            <div class="col-2 bg-light content side" style="display: none;">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;
+                <div class="col-12">
+                    <a href="Dashboard.html">Products</a>
+                    <a href="user.html">Users</li>
+                    <a href="inventory.html">Inventory</a>
+                </div>
+              </div>
+            </div>
+
+              <div class="row">
+            <div class="col-7 contents">
+               <!-- <div class="row">
+                 <div class="col-12">
+                   <h3 class="overView">Overview</h3>
+                 </div>
+               </div> -->
+
+               <!-- <div class=" container row">
+                <div class="col-10">
+                  <h5 class="analytic">Analytics</h5>
+                </div>
+                <div class="col-2">
+                  <h5 class="Month">Month</h5>
+                </div>
+              </div> -->
+
+              <div class=" container row">
+                <div class="col-4">
+                  <div class=" alert alert-success notify">
+                    <p>Total Products</p><p></p>
+                    <p class="totalProducts"></p>
+                  </div>
+                </div>
+                
+               
+                
+              </div>
+
+               <!-- modal -->
+               <div class="modal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Add Product</h5>
+                      <button type="button" class="btn-close clos" aria-label="Close">X</button>
+                    </div>
+                    <div class="modal-body">
+                      
+                      <div class="row">
+                        <div class="input-field col s12" id="hid" hidden>
+                          <input id="hidden" type="text" class="form-control validate" placeholder="">
+                          
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="image" type="text" class=" form-control validate" placeholder="Image">
+                         
+                        </div>
+                      </div><p></p>
+
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="name" type="text" class="form-control validate" placeholder="Name"> 
+                        
+                        </div>
+                      </div><p></p>
+
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="description" type="text" class="form-control validate" placeholder="Description">
+                          
+                        </div>
+                      </div><p></p>
+
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="price" type="text" class="form-control validate" placeholder="Price">
+                        
+                        </div>
+                      </div><p></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary closeBtn">Close</button>
+                      <button type="button" class="btn btn-primary" id="add">Add</button>
+                      <button type="button" class="btn btn-primary" onclick="updateProducts()" id="saveChanges" style="display: none;">saveChanges</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container row">
+                <button class="container text-center btn btn-primary btnProduct"  value="Add Product">Add Product</button>
+               <div class="row">
+                  <h5 class=" col-md-12 tableTitle ">Product</h5> 
+                </div>
+                  <table class=" container table table-hover   contTable">
+                  <thead>
+                    <tr>
+                     
+                      
+                      <th scope="col-md-2">S/N</th>
+                      <th scope="col-md-2">Image</th>
+                      <th scope="col- md-2">Name</th>
+                      <th scope="col-md-2">Description</th>
+                      <th scope="col-md-2">Price</th>
+                      <th scope="col-md-2">Actions</th>
+                    
+                    </tr>
+                  </thead>
+                  <tbody class="tb">
+          
+                  </tbody>
+                </table>
+                
+              </div>
+              
+              </div>
+              <div class="col-2 bg-light container sides" style="float: left;">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"> 
+                     
+                  </button>
+                  <ul class="dropdown-menu navbar-nav px3" style="display: none;">
+                    <li class="nav-item text-nowrap nav-link"><a class="dropdown-item " href="index.html">Sign Out</a></li>
+                    <li class="nav-item text-nowrap nav-link"><a class="dropdown-item editadmin" onclick="editAdmin(k)">Edit</a></li>
+                  </ul>
+                </div>
+            </div>
+              </div>
+        
+         
+        
+              
+               
+           
+
+<div id="success" class=" row container text-center alert alert-success" style="margin-left:300px; height: 80px; width:200px; display: none; color: white;">
+  <p class="col-md-6" id="successMsg"></p>
+</div>
+
+<div id="error" class="row container text-center alert alert-danger" style="margin-left: 300px; height: 80px; width: 200px; display: none; color: white;">
+  <p class="col-md-6" id="errorMsg"> </p>
+</div>
+
+<script src="User.js"></script>
+</body>
+
+</html>
